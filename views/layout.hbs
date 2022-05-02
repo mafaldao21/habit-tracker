@@ -1,0 +1,39 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{appTitle}}</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+
+    <header>
+      <nav>
+        <ul>
+          <li>
+           
+            <a href="/habits">Your Habits</a>
+            <a href="/habits/new">Create Habit</a>
+            <a href="/habits/edit">Edit Habit</a>
+
+            {{#if session.user}}
+            <a href="/logout">Logout</a>
+            {{else}} 
+            <a href="/login">Login</a>
+            <a href="/signup">Register</a>
+            {{/if}}
+
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    {{{body}}}
+
+    <script src="/js/script.js"></script>
+  </body>
+
+</html>
