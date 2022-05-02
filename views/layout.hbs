@@ -19,9 +19,9 @@
             <a href="/habits/new">Create Habit</a>
             <a href="/habits/edit">Edit Habit</a>
 
-            {{#if session.user}}
+            {{#if userDetails}}
             <a href="/logout">Logout</a>
-            {{else}} 
+            {{else}}
             <a href="/login">Login</a>
             <a href="/signup">Register</a>
             {{/if}}
