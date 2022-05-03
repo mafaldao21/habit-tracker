@@ -20,7 +20,9 @@
 
         <p>of {{this.numberOfTimes}}{{this.unit}}, {{this.frequency}}.</p>
           <button><a  href="/habits/{{_id}}/edit">Edit Habit</a></button>
-          <button><a  href="/habits/{{_id}}/delete">Delete Habit</a></button>
+         <form action="/habits/{{_id}}/delete" method="POST">
+         <button>Delete Habit</button>
+         </form>
       {{/each}}
     </div>
 

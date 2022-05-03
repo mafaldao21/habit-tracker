@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const User = require("../models/User.model")
 const Habit = require("../models/Habit.model")
-const isLoggedIn = require("../middleware/isLoggedIn")
+const isLoggedIn = require("../middleware/isLoggedIn");
+const async = require("hbs/lib/async");
 
 // Display 
 router.get("/habits", (req, res, next) => {
@@ -78,13 +79,14 @@ router.post("/habits/:habitId/edit", isLoggedIn, (req, res, next) => {
 router.post("/habits/:habitId/delete", isLoggedIn, (req, res, next) => {
     const id = req.params.habitId;
     Habit.findByIdAndRemove(id)
-    .then ((response) => {
+    .then((response) => { 
+        console.log(response)
         res.redirect("/habits")
     })
     .catch(error => {
-        console.log("Error creating Habits in DB", error);
+        console.log("Error deleting Habits in DB", error);
         next(error);
-    })
+   })
 })
 
 
