@@ -21,6 +21,10 @@ const habitSchema = new Schema({
         type: Number,
         required: true,
     },
+    unit: {
+        type: "String",
+        enum: ["Liters", "Minutes", "Hours", "Times"],
+    },
     image: {
         type: "String",
         default: "../../public/images/png-transparent-computer-icons-checklist-icon-design-graphic-design-information-miscellaneous-text-logo.png",
