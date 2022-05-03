@@ -25,10 +25,10 @@ const habitSchema = new Schema({
         type: "String",
         enum: ["Liters", "Minutes", "Hours", "Times"],
     },
-    image: {
+    /*image: {
         type: "String",
-        default: "../../public/images/png-transparent-computer-icons-checklist-icon-design-graphic-design-information-miscellaneous-text-logo.png",
-    },
+        default: "images/habitIcon.png",
+    },*/
     creator: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",

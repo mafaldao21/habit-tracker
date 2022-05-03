@@ -24,6 +24,7 @@ router.get("/habits/new", isLoggedIn, (req, res, next) => {
 
 //Post
 
+
 router.post("/habits/new", isLoggedIn, (req, res, next) => {
     const newHabit = {
         name: req.body.name,
@@ -32,13 +33,58 @@ router.post("/habits/new", isLoggedIn, (req, res, next) => {
         unit: req.body.unit,
     }
     Habit.create(newHabit)
-        .then((habitFromDB) =>{
+        .then((habitFromDB) => {
             res.redirect("/habits")
         })
         .catch(error => {
             console.log("Error creating Habits in DB", error);
             next(error);
         })
+})
+
+//Edit
+router.get("/habits/:habitId/edit", isLoggedIn, (req, res, next) => {
+    const id = req.params.habitId;
+    Habit.findById(id)
+        .then(habitDetails => {
+            res.render("habits/edit-habit", habitDetails)
+        })
+        .catch(error => {
+            console.log("Error creating Habits in DB", error);
+            next(error);
+        })
+})
+
+router.post("/habits/:habitId/edit", isLoggedIn, (req, res, next) => {
+    const id = req.params.habitId;
+    const newDetails = {
+        name: req.body.name,
+        frequency: req.body.frequency,
+        numberOfTimes: req.body.numberOfTimes,
+        unit: req.body.unit,
+    }
+    Habit.findByIdAndUpdate(id, newDetails)
+        .then((habit) => {
+            res.redirect("/habits")
+        })
+        .catch(error => {
+            console.log("Error creating Habits in DB", error);
+            next(error);
+        })
+})
+
+//Delete command
+
+router.post("/habits/:habitId/delete", isLoggedIn, (req, res, next) => {
+    const id = req.params.habitId;
+    Habit.findByIdAndRemove(id)
+    .then ((response) => {
+        res.redirect("/habits")
+    })
+    .catch(error => {
+        console.log("Error creating Habits in DB", error);
+        next(error);
+    })
 })
 
 

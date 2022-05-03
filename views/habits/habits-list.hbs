@@ -1,8 +1,28 @@
-<section class="container">
-    <div class="habit">
-        {{#each habits}}
+<section class="container px-4 py-5" id="habits">
+  <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="feature col">
+      {{#each habits}}
         <h3>{{this.name}}</h3>
-        {{/each}}
-    </div>
-</section>
+        <img src="images/habitIcon.png" alt="habit image" />
+        <div class="progress">
+          <div
+            class="progress-bar progress-bar-info progress-bar-striped"
+            role="progressbar"
+            aria-valuenow="50"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            style="width:50%"
+          >
+            50% Complete (info)
+          </div>
+        </div>
+        
 
+        <p>of {{this.numberOfTimes}}{{this.unit}}, {{this.frequency}}.</p>
+          <button><a  href="/habits/{{_id}}/edit">Edit Habit</a></button>
+          <button><a  href="/habits/{{_id}}/delete">Delete Habit</a></button>
+      {{/each}}
+    </div>
+
+  </div>
+</section>

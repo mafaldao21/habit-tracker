@@ -1,0 +1,32 @@
+<h2>Edit a Habit</h2>
+
+<form action="/habits/{{_id}}/edit" method="POST">
+
+  <label> Name:
+    <input type="text" name="name" value={{this.name}} required />
+  </label>
+
+  <label> Frequency:
+    <select name="frequency" value={{this.frequency}}>
+        <option value="Daily">Daily</option>  
+        <option value="Weekly">Weekly</option>  
+        <option value="Monthly">Monthly</option>  
+    </select>
+  </label>
+
+  <label> Number of Times:
+    <input type="number" name="numberOfTimes" min="1" max="1000" value={{this.numberOfTimes}}/>
+  </label>
+
+  <label> Unit:
+    <select name="unit" value={{this.unit}}>
+        <option value="Liters">Liters</option>  
+        <option value="Minutes">Minutes</option>  
+        <option value="Hours">Hours</option> 
+        <option value="Times">Times</option> 
+    </select>
+  </label>
+
+  <button type="submit"> Save </button>
+  <button type="submit"> <a href="/habits">Back</a> </button>
+</form>
