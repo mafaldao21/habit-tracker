@@ -67,7 +67,7 @@ console.log("username", username)
       .then((user) => {
         // Bind the user to the session object
         req.session.user = user;
-        res.redirect("/");
+        res.redirect("/habits");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
