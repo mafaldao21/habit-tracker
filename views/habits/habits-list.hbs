@@ -1,26 +1,24 @@
 <section class="container" id="habits">
-    <h2>Check out your progress!</h2>
+    <h3>Check out your progress!</h3>
   <div class="row">
       {{#each habits}}
 
         <div class="col col-10 col-sm-10 col-m-6 col-lg-6, habit">
 
-            <h3>{{this.name}}</h3>
-             <img src="images/habitIcon.png" alt="habit image" />
+            <h2 id="habitname" >{{this.name}}</h2>
             <div class="info">
+              <div id="fullcheckbox">
 
-                <input type="checkbox" name="progress" class="checkbox" id="checkbox">Complete</input> 
-                <p>{{this.numberOfTimes}}{{this.unit}}, {{this.frequency}}.</p>
-
+                <input type="checkbox" name="progress" class="checkbox" id="checkbox"></input> 
+                <p id="checkbox-text">{{this.numberOfTimes}}{{this.unit}}, {{this.frequency}}.</p>
+              </div>
                 <div id="habit-buttons">
 
                 <button type="button" class="btn btn-light"><a  href="/habits/{{_id}}/edit">Edit Habit</a></button>
                  <form action="/habits/{{_id}}/delete" method="POST">
-                <button type="button" class="btn btn-dark">Delete Habit</button>
+                <button class="btn btn-dark">Delete Habit</button>
                 </form>
-
                 </div>
-
             </div>
 
         </div>
