@@ -89,5 +89,8 @@ router.post("/habits/:habitId/delete", isLoggedIn, (req, res, next) => {
    })
 })
 
+router.get("/help", (req, res, next) => {
+    res.render("help")
+})
 
 module.exports = router;

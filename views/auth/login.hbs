@@ -1,14 +1,18 @@
-<h2>Welcome Back</h2>
+<h2 style="text-decoration: underline;">Welcome Back!</h2>
 <form action="/login" method="POST">
+   <div class="form-group">
    <label> Username
-      <input type="text" name="username">
+      <input class="form-control" type="text" name="username">
    </label>
    <label> Password
-      <input type="password" name="password">
+      <input class="form-control" type="password" name="password">
    </label>
-
-   <button type="submit">Submit</button>
+   </div>
+   <button type="submit" class="btn btn-outline-info">Submit</button>
+   
 </form>
+
+<p>Don't have an account? <a href="/signup">Register here</a></p>
 
 {{#if errorMessage}}
    {{errorMessage}}

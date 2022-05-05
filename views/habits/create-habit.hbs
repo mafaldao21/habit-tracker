@@ -1,15 +1,16 @@
 </div><h3>Create a Habit</h3>
 
   <form action="/habits/new" method="POST">
+  <div class="form-group">
 
     <label>
       Name:
-      <input type="text" name="name"  />
+      <input class="form-control" type="text" name="name"  />
     </label>
 
     <label>
       Frequency:
-      <select name="frequency">
+      <select class="form-control" name="frequency">
         <option value="Daily">Daily</option>
         <option value="Weekly">Weekly</option>
         <option value="Monthly">Monthly</option>
@@ -17,20 +18,23 @@
     </label>
 
     <label>
-      Number of Times:
-      <input type="number" name="numberOfTimes" min="1" max="1000" />
+      Quantity:
+      <input class="form-control" type="number" name="numberOfTimes" min="1" max="1000" />
     </label>
 
     <label>
       Unit:
-      <select name="unit">
+      <select class="form-control" name="unit">
         <option value="Liters">Liters</option>
         <option value="Minutes">Minutes</option>
         <option value="Hours">Hours</option>
         <option value="Times">Times</option>
       </select>
     </label>
+  </div>
 
-    <button type="submit"> Create </button>
-    <button type="submit"> <a href="/habits">Back</a> </button>
+  <div class="buttons">
+    <button type="submit" class="btn btn-info"> Create </button>
+    <button type="submit" class="btn btn-light"> <a href="/habits">Back</a> </button>
+  </div>
   </form>
