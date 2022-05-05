@@ -15,20 +15,23 @@
     
       <nav>
         <ul class="nav nav-pills">
-          <li class="nav-item"> 
-            <a class="nav-link" href="/habits">Your Habits</a> 
-          </li> 
-          <li class="nav-item"> <a class="nav-link" href="/habits/new">Create Habit</a>
-          </li>
+         
           <li class="nav-item">
             <a  class="nav-link" href="/help">Help</a>
             </li>
 
         
             {{#if userDetails}}
+           
+            <li class="nav-item"> 
+              <a class="nav-link" href="/habits">Your Habits</a> 
+            </li> 
+              <li class="nav-item"> <a class="nav-link" href="/habits/new">Create Habit</a>
+            </li> 
             <li class="nav-item">
-            <a  class="nav-link" href="/logout">Logout</a>
+              <a  class="nav-link" href="/logout">Logout</a>
             </li>
+            
             {{else}}
             <li class="nav-item" >
             <a  class="nav-link" href="/login">Login</a>

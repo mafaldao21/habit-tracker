@@ -5,9 +5,15 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 const async = require("hbs/lib/async");
 
 // Display 
-router.get("/habits", (req, res, next) => {
-    Habit.find()
+router.get("/habits", isLoggedIn, (req, res, next) => {
+   Habit.find()
         .populate("creator")
+        .then((habits) => {
+            const habitsArr = habits.filter(element => {
+                return element.creator._id.toString() === req.user._id
+            } )
+            return habitsArr
+        })
         .then((habitsArr) => {
             res.render("habits/habits-list", { habits: habitsArr })
         })
@@ -32,6 +38,7 @@ router.post("/habits/new", isLoggedIn, (req, res, next) => {
         frequency: req.body.frequency,
         numberOfTimes: req.body.numberOfTimes,
         unit: req.body.unit,
+        creator: req.user
     }
     Habit.create(newHabit)
         .then((habitFromDB) => {

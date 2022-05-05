@@ -25,10 +25,6 @@ const habitSchema = new Schema({
         type: "String",
         enum: ["Liters", "Minutes", "Hours", "Times"],
     },
-    /*image: {
-        type: "String",
-        default: "images/habitIcon.png",
-    },*/
     creator: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
