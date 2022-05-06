@@ -16,6 +16,7 @@ const habitSchema = new Schema({
     frequency: {
         type: "String",
         enum: ["Daily", "Weekly", "Monthly"],
+        required: true,
     },
     numberOfTimes: {
         type: Number,
@@ -24,6 +25,7 @@ const habitSchema = new Schema({
     unit: {
         type: "String",
         enum: ["Liters", "Minutes", "Hours", "Times"],
+        required: true,
     },
     creator: {
         type: mongoose.Schema.Types.ObjectId,
