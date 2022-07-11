@@ -1,6 +1,6 @@
 
 body {
-  background-color: #b1e7e9;
+  background-image: url("/images/background.jpeg");
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   text-align: center;
   display: flex;
@@ -10,7 +10,7 @@ body {
 
 header {
   padding: 0;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.771);
   text-decoration: none;
 }
 
@@ -52,7 +52,7 @@ h2{
   
 }
 .habit {
-  background-color: rgb(250, 207, 87);
+  background-color: rgba(250, 206, 87, 0.867);
   margin: 20px;
   padding: 10px;
   width: 400px;
@@ -97,7 +97,7 @@ a {
 }
 
 .login-register {
-  background-color: rgb(255, 203, 55);
+  background-color: rgba(255, 202, 55, 0.818);
   text-align: center;
   border-radius: 5%;
   display: flex;

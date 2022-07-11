@@ -5,12 +5,12 @@
 
     <label>
       Name:
-      <input class="form-control" type="text" name="name"  />
+      <input class="form-control" type="text" name="name" value="New habit" required/>
     </label>
 
     <label>
       Frequency:
-      <select class="form-control" name="frequency">
+      <select class="form-control" name="frequency" required>
         <option value="Daily">Daily</option>
         <option value="Weekly">Weekly</option>
         <option value="Monthly">Monthly</option>
@@ -19,12 +19,12 @@
 
     <label>
       Quantity:
-      <input class="form-control" type="number" name="numberOfTimes" min="1" max="1000" />
+      <input required class="form-control" type="number" name="numberOfTimes" min="1" max="1000" value="1" />
     </label>
 
     <label>
       Unit:
-      <select class="form-control" name="unit">
+      <select required class="form-control" name="unit">
         <option value="Liters">Liters</option>
         <option value="Minutes">Minutes</option>
         <option value="Hours">Hours</option>
