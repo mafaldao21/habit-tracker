@@ -127,26 +127,17 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           });
         }
         req.session.user = user;
-        // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
         return res.redirect("/habits");
       });
     })
 
     .catch((err) => {
-      // in this case we are sending the error handling to the error handling middleware that is defined in the error handling file
-      // you can just as easily run the res.status that is commented out below
       next(err);
-      // return res.status(500).render("login", { errorMessage: err.message });
     });
 });
 
 router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
-    // if (err) {
-    //   return res
-    //     .status(500)
-    //     .render("auth/logout", { errorMessage: err.message });
-    // }
     res.redirect("/");
   });
 });

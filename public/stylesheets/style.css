@@ -19,10 +19,6 @@ header {
   color: black;
 } 
 
-h1 {
-  color: 15px;
-}
-
 #habits {
   align-items: center;
   display: flex; 
@@ -46,11 +42,24 @@ h1 {
   max-width: 100px;
 }
 
+h1 {
+  font-weight: 800;
+  color: 15px;
+}
+
 h2{
   font-style: italic;
   color: rgba(0, 0, 0, 0.829);
   
 }
+
+h3 {
+  font-size: 30px;
+  font-weight: lighter;
+  font-style: italic;
+  margin: 30px;
+}
+
 .habit {
   background-color: rgba(250, 206, 87, 0.867);
   margin: 20px;
@@ -78,17 +87,6 @@ h2{
 
 #habits p {
   margin: 5px;
-}
-
-h3 {
-  font-size: 30px;
-  font-weight: lighter;
-  font-style: italic;
-  margin: 30px;
-}
-
-h1 {
-  font-weight: 800;
 }
 
 a {
